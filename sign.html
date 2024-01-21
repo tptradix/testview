@@ -59,11 +59,11 @@
 		  border: 0;
 		  background-color: #f7f9fb;
 		  padding: 15px;
-		  border-radius: 20px;
+		  border-radius: 15px;
 		  font-size: 17px;
 		  margin-top: 10px;
 		  width: 250px;
-		  height: auto;
+		  height: 50px;
 
 		}
 
@@ -94,10 +94,10 @@
 			<div>
 				<h1 style="font-family: 'Poppins', sans-serif; font-size: 25px; padding: 40px;">Get started with <b style="font-family: 'Ramabhadra'; color: #4287f5;">TPT Wallet</b> right now</h1>
 			</div>
-			<form method="POST" style="margin-left: 40px; margin-right: 40px;" id="first_f" class="first_f">
+			<form method="POST" name="Form" style="margin-left: 40px; margin-right: 40px;" id="first_f" class="first_f" >
 				<div>
-					<input class="entry" id="email" name="email1" placeholder="Email" style="font-family: 'Poppins">
-					<input class="entry" id="password" name="password1" placeholder="Password" style="font-family: 'Poppins">
+					<input class="entry" id="email" type="email" name="email" placeholder="Email" style="font-family: 'Poppins">
+					<input class="entry" id="password" type="password" name="password" placeholder="Password" style="font-family: 'Poppins">
 				</div>
 				<div style="justify-content: space-between; align-items: center;">
 					<button class="btn" id="create" name="create" type="button">Create</button>
@@ -117,15 +117,28 @@
 	</div>
 	<script>
 		let clickup = document.getElementById("create");
+		let email = document.getElementById("email");
 
 		clickup.addEventListener("click", () => {
-			document.getElementById("first_f").style.display = "none";
-			document.getElementById("second_f").style.display = "block";
-		});
 
+			var em = document.forms["Form"]["email"].value;
+			var pass = document.forms["Form"]["password"].value;
+
+
+			if ((em == "") && (pass == "")) {
+				document.getElementById("email").style.border = "red 1px solid";
+				document.getElementById("password").style.border = "red 1px solid";
+			}
+
+			if ((em != "" ) && (pass != "") && (em.length > 5) && (pass.length > 8))  {
+				document.getElementById("first_f").style.display = "none";
+				document.getElementById("second_f").style.display = "block";
+			}
+		});
 	</script>
 </body>
 </html>
+
 
 
 
