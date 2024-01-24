@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>TPtradix</title>
+	<title>TPT Wallet</title>
 	<meta name="author" content="TPTradix | Buy | Exchange |">
 	<meta name="description" content="TPT wallet, sign up or sign in">
 	<meta property="og:title" content="TPTradix | Buy | Exchange |" data-shuvi-head="true">
-	<meta property="og:site_name" content="TPTradix" data-shuvi-head="true">
+	<meta property="og:site_name" content="TPT Wallet" data-shuvi-head="true">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ramabhadra&display=swap" rel="stylesheet">
 	<script></script>
 </head>
@@ -62,9 +62,13 @@
 		  border-radius: 15px;
 		  font-size: 17px;
 		  margin-top: 10px;
-		  width: 250px;
+		  width: 230px;
 		  height: 50px;
 
+		}
+
+		input:focus {
+			outline: none;
 		}
 
 		.btn {
@@ -77,8 +81,9 @@
 		}
 
 
-		.second_f {
-		  display: none;
+		.first_f {
+		  align-items: center;
+		  justify-content: center;
 		}
 
 	</style>
@@ -94,50 +99,63 @@
 			<div>
 				<h1 style="font-family: 'Poppins', sans-serif; font-size: 25px; padding: 40px;">Get started with <b style="font-family: 'Ramabhadra'; color: #4287f5;">TPT Wallet</b> right now</h1>
 			</div>
-			<form method="POST" name="Form" style="margin-left: 40px; margin-right: 40px;" id="first_f" class="first_f" >
+			<form name="Form" method="POST" action="" style="margin-left: 40px; margin-right: 40px;" id="first_f" class="first_f">
 				<div>
-					<input class="entry" id="email" type="email" name="email" placeholder="Email" style="font-family: 'Poppins">
+					<input class="entry" id="email" type="text" name="email" placeholder="Name" style="font-family: 'Poppins">
 					<input class="entry" id="password" type="password" name="password" placeholder="Password" style="font-family: 'Poppins">
-				</div>
-				<div style="justify-content: space-between; align-items: center;">
-					<button class="btn" id="create" name="create" type="button">Create</button>
-					<b style="font-family: 'Ramabhadra', sans-serif; font-size: 17px; color: #5c5c5c"> / </b>
-					<button class="btn" id="log" name="log" type="button">Log In</button>
-				</div>
-			</form>
-			<form method="POST" style="margin-left: 40px; margin-right: 40px;" id="second_f" class="second_f">
-				<div>
-					<input class="entry" id="code" name="code" placeholder="Code" style="font-family: 'Poppins">
-				</div>
-				<div style="justify-content: space-between; align-items: center;">
-					<button class="btn" id="next" name="next">Contune</button>
+					<button class="btn" id="create" name="create" type="submit" style="display: none; width: 100%">Submit</button>
 				</div>
 			</form>
 		</div>
 	</div>
 	<script>
-		let clickup = document.getElementById("create");
-		let email = document.getElementById("email");
+		document.getElementById("email").addEventListener("input", () => {
+			let clickup = document.getElementById("create");
+			let oninput1 = document.getElementById("email");
+			let oninput2 = document.getElementById("password");
+			let email = document.getElementById("email").value;
+			let pass = document.getElementById("password").value;
 
-		clickup.addEventListener("click", () => {
+			if ((email.length >= 3 && pass.length > 7)) {
+				clickup.style.display = "block";
+				oninput1.style.border = "2px solid limegreen";
+				oninput2.style.border = "2px solid limegreen";
 
-			var em = document.forms["Form"]["email"].value;
-			var pass = document.forms["Form"]["password"].value;
-
-
-			if ((em == "") && (pass == "")) {
-				document.getElementById("email").style.border = "red 1px solid";
-				document.getElementById("password").style.border = "red 1px solid";
 			}
 
-			if ((em != "" ) && (pass != "") && (em.length > 5) && (pass.length > 8))  {
-				document.getElementById("first_f").style.display = "none";
-				document.getElementById("second_f").style.display = "block";
+			if ((email.length < 4 || pass.length < 8)) {
+				clickup.style.display = "none";
+				oninput1.style.border = "2px solid red";
+				oninput2.style.border = "2px solid red";
+
 			}
-		});
+		})
+
+		document.getElementById("password").addEventListener("input", () => {
+			let clickup = document.getElementById("create");
+			let oninput1 = document.getElementById("email");
+			let oninput2 = document.getElementById("password");
+			let email = document.getElementById("email").value;
+			let pass = document.getElementById("password").value;
+
+			if ((email.length > 3 && pass.length > 7)) {
+				clickup.style.display = "block";
+				oninput1.style.border = "2px solid limegreen";
+				oninput2.style.border = "2px solid limegreen";
+
+			}
+
+			if ((email.length < 4 || pass.length < 8)) {
+				clickup.style.display = "none";
+				oninput1.style.border = "2px solid red";
+				oninput2.style.border = "2px solid red";
+			}
+		})
+		
 	</script>
 </body>
 </html>
+
 
 
 
