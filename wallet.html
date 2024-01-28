@@ -11,17 +11,17 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ramabhadra&display=swap" rel="stylesheet">
 	<script></script>
 </head>
-<body style="background: #f7f9fb;">
-	<style> .main-screen { background: #f7f9fb; }</style>
+<body>
+	<style> .main-screen { background: #f7f9fb; display: block; }</style>
 	<style> * { margin: 0; padding: 0; }</style>
 	<style>	body { width: 100%; height: auto; background-color: #FFFFFF; font-size: 23px; text-align: center; }</style>
-	<style> .view-state-n { padding: 15px; margin: 8px; margin-right: 30px; margin-left: 30px; border-radius: 10px; background-color: #f7f9fb; }</style>
+	<style> .view-state-n { padding: 15px; margin: 10px; margin-right: 30px; margin-left: 30px; margin-top: 0px; border-radius: 10px; background-color: #f7f9fb; }</style>
 	<style> .view-ball-id1 { color: #000000; font-size: 14px; font-family: 'Poppins'; }</style>
 	<style> .view-ls { display: flex; justify-content: space-between; align-items: center; }</style>
 	<style> .currency-view { font-size: 38px; font-family: 'Poppins'; color: #000000; }</style>
 	<style> .addr-view { font-size: 11px; color: #000000; font-family: 'Poppins'; }</style>
 	<style> .btn { border: 1.6px solid #000000; background-color: transparent; color: #000000; font-family: 'Poppins'; font-size: 12px; padding: 3px; border-radius: 25px;}</style>
-	<style> .ui-img { background: #3390ec; border-radius: 30px; margin-left: 10px; margin-right: 10px;}</style>
+	<style> .ui-img { background: transparent; border-radius: 30px; margin-left: 10px; margin-right: 10px; border: 2px solid #3390ec;}</style>
 	<style> .nav-view { display: flex; justify-content: center; color: #707579; }</style>
 	<style> .all-currency { background: #FFFFFF; justify-content: center; padding: 10px; margin: 10px; overflow: auto; height: 250px; }</style>
 	<style> .crypto-f { color: #000000; font-size: 15px; font-family: 'Poppins'; padding: 5px; }</style>
@@ -29,13 +29,16 @@
 	<style> .bm { position: fixed; bottom: 0; background-color: #f7f9fb; width: 100%; display: flex;}</style>
 	<style> .bacl { background: #FFFFFF; border-top-left-radius: 40px; border-top-right-radius: 40px; padding-top: 15px; }</style>
 	<style> .change-ecx { display: flex; justify-content: space-between; align-items: center; text-align: center; background-color: #f7f9fb; margin: 20px; padding: 1.5px; border-radius: 10px; }</style>
-	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 120px; }</style>
-	<style> .ui-btn-o { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 120px ;}</style>
+	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 150px; }</style>
+	<style> .ui-btn-o { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100px ;}</style>
 	<style> .other-view { background: #FFFFFF; margin-top: 10px; padding: 10px; }</style>
 	<style> .other-btn { background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100%; border: 0;}</style>
 	<style> .ui-img-other { border: 2px solid #3390ec; border-radius: 30px; margin-left: 10px; margin-right: 10px; }</style>
+	<style> .crypto-dep { display: none; height: 100% width: 100%; align-items: center; }</style>
+	<style> .usdt-view {  background: #FFFFFF; border-radius: 20px; justify-content: center; margin-top: 40%; }</style>
+	<style> .addr-img { background: #f7f9fb; padding: 10px; border-radius: 20px; }</style>
  
-	<div class="main-screen">
+	<div id="main-screen" class="main-screen">
 		<div>
 			<div class="view-state-n">
 				<div class="view-ls">
@@ -55,16 +58,20 @@
 			<div class="bacl">
 				<nav class="nav-view">
 					<div>
-						<img class="ui-img" width="45px" height="45px" src="https://i.ibb.co/qpSvPhz/send.png">
+						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/GtGtrfyF/send.png">
+						<p class="addr-view">Send</p>
 					</div>
 					<div>
-						<img class="ui-img" width="45px" height="45px" src="https://i.ibb.co/cQ13pwn/drw.png">
+						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/0NYwdbQG/plus.png">
+						<p class="addr-view">Deposit</p>
 					</div>
 					<div>
-						<img class="ui-img" width="45px" height="45px" src="https://i.ibb.co/TTfmcHq/change.png">
+						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/43xqvTLd/exchange.png">
+						<p class="addr-view">Convert</p>
 					</div>
 					<div>
-						<img class="ui-img" width="45px" height="45px" src="https://i.ibb.co/xSm9rsm/card.png">
+						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/bvW1wQ4T/card.png">
+						<p class="addr-view">Buy</p>
 					</div>
 				</nav>
 				<div class="change-ecx">
@@ -84,10 +91,11 @@
 						<p class="crypto-f">0 TON</p>
 					</div>
 					<div class="separate"></div>
-					<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #f7f9fb; border-radius: 15px">
+					<div id="tether" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #f7f9fb; border-radius: 15px">
 						<div style="display: flex; align-items: center;">
-							<img width="40px" height="40px" src="https://cdn.worldvectorlogo.com/logos/tether.svg">
+							<img id="tether-copy" width="40px" height="40px" src="https://cdn.worldvectorlogo.com/logos/tether.svg">
 							<h2 class="crypto-f">Tether</h2>
+							<input id="usdt-adr" value="TRXSRp3gsRsGzMpZKSiAT3nKHgwQv2UJmD" style="display: none;">
 						</div>
 						<p class="crypto-f">0 USDT</p>
 					</div>
@@ -136,12 +144,30 @@
 						<img class="ui-img-other" width="40px" height="40px" src="https://i.postimg.cc/h49GVYsW/bridge.png">
 						<p class="addr-view">Bridge</p>
 					</div>
+					<div>
+						<img class="ui-img-other" width="40px" height="40px" src="https://i.postimg.cc/fb9t3fR8/pool.png">
+						<p class="addr-view">Pool</p>
+					</div>
 				</nav> 
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		let tether = document.getElementById("tether-copy"); var copy = document.getElementById("usdt-adr").value;
+		tether.onclick = function() {
+			var texttocopy = document.createElement("textarea");
+			texttocopy.value = copy;
+			document.body.appendChild(texttocopy);
+			texttocopy.select();
+			document.execCommand("copy");
+			document.body.removeChild(texttocopy);
+		}
+	</script>
 </body>
 </html>
+
+
+
 
 
 
