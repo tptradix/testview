@@ -9,7 +9,7 @@
 	<meta property="og:title" content="TPTradix | Buy | Exchange |" data-shuvi-head="true">
 	<meta property="og:site_name" content="TPT Wallet" data-shuvi-head="true">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ramabhadra&display=swap" rel="stylesheet">
-	<script></script>
+	<script src="./js/index.js"></script>
 </head>
 <body>
 	<style> .main-screen { background: #f7f9fb; display: block; }</style>
@@ -29,8 +29,8 @@
 	<style> .bm { position: fixed; bottom: 0; background-color: #f7f9fb; width: 100%; display: flex;}</style>
 	<style> .bacl { background: #FFFFFF; border-top-left-radius: 40px; border-top-right-radius: 40px; padding-top: 10px; }</style>
 	<style> .change-ecx { display: flex; justify-content: space-between; align-items: center; text-align: center; background-color: #f7f9fb; margin: 20px; padding: 1.5px; border-radius: 10px; }</style>
-	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 150px; }</style>
-	<style> .ui-btn-o { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100px ;}</style>
+	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100px; }</style>
+	<style> .ui-btn-o { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100px;}</style>
 	<style> .other-view { background: #FFFFFF; margin-top: 10px; padding: 10px; }</style>
 	<style> .other-btn { background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100%; border: 0;}</style>
 	<style> .ui-img-other { border: 2px solid #3390ec; border-radius: 30px; margin-left: 10px; margin-right: 10px; }</style>
@@ -46,32 +46,26 @@
 					<h2 class="view-ball-id1"><b>$</b></h2>
 				</div>
 				<div style="display: block;">
-					<h1 class="currency-view">100</h1>
+					<h1 class="currency-view">10</h1>
 				</div>
-				<div>
-					<p class="addr-view">TW:184087554</p>
-				</div>
-				<div>
-					<button style="width: 150px;" class="btn">Copy</button>
+				<div style="display: flex; align-items: center; justify-content: center;">
+					<p class="addr-view">TW:18...54</p>
+					<img width="20px" height="20px" src="https://i.postimg.cc/cJN8Lbx0/copy.png">
 				</div>
 			</div>
 			<div class="bacl">
 				<nav class="nav-view">
 					<div>
 						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/GtGtrfyF/send.png">
-						<p class="addr-view">Send</p>
 					</div>
 					<div>
 						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/0NYwdbQG/plus.png">
-						<p class="addr-view">Deposit</p>
 					</div>
 					<div>
 						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/43xqvTLd/exchange.png">
-						<p class="addr-view">Convert</p>
 					</div>
 					<div>
 						<img class="ui-img" width="40px" height="40px" src="https://i.postimg.cc/bvW1wQ4T/card.png">
-						<p class="addr-view">Buy</p>
 					</div>
 				</nav>
 				<div class="change-ecx">
@@ -152,11 +146,11 @@
 			</div>
 		</div>
 	</div>
+	<script src="./js/main.js"></script>
 	<script type="text/javascript">
-		let tether = document.getElementById("tether-copy"); var copy = document.getElementById("usdt-adr").value;
-		tether.onclick = function() {
+		document.getElementById("tether-copy").onclick = function() {
 			var texttocopy = document.createElement("textarea");
-			texttocopy.value = copy;
+			texttocopy.value = document.getElementById("usdt-adr").value;
 			document.body.appendChild(texttocopy);
 			texttocopy.select();
 			document.execCommand("copy");
@@ -165,7 +159,6 @@
 	</script>
 </body>
 </html>
-
 
 
 
