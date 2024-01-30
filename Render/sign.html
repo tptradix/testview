@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TPT Wallet</title>
+	<meta name="author" content="TPTradix | Buy | Exchange |">
+	<meta name="description" content="TPT wallet, sign up or sign in">
+	<meta property="og:title" content="TPTradix | Buy | Exchange |" data-shuvi-head="true">
+	<meta property="og:site_name" content="TPT Wallet" data-shuvi-head="true">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ramabhadra&display=swap" rel="stylesheet">
+	<script></script>
+</head>
+<body>
+	<style type="text/css">
+		/* MAIN */
+		* {
+		  margin: 0;
+		  padding: 0;
+		}
+
+		*,
+		*::before,
+		*::after {
+		  box-sizing: border-box;
+		}
+
+		body {
+		  width: 100%;
+		  height: auto;
+		  background-color: #FFFFFF;
+		  font-size: 23px;
+		  text-align: center;
+		}
+	</style>
+	<style type="text/css">
+		.content_header_view {
+		  background-color: #FFFFFF;
+		  display: flex;
+		  width: auto;
+		  height: auto;
+		  padding: 25px;
+		  padding-top: 15px;
+		  padding-bottom: 15px;
+		}
+	</style>
+	<style type="text/css">
+		.preview {
+		  font-size: 19px;
+		  padding: 3px;
+		  margin: 0px;
+		}
+	</style>
+	<style type="text/css">
+		.entry {
+		  border: 0;
+		  background-color: #f7f9fb;
+		  padding: 15px;
+		  border-radius: 15px;
+		  font-size: 17px;
+		  margin-top: 10px;
+		  width: 220px;
+		  height: 50px;
+		}
+
+		input:focus {
+			outline: none;
+		}
+	</style>
+	<style type="text/css">
+		.btn {
+		  border: 0;
+		  background-color: transparent;
+		  font-size: 18px;
+		  color: #1d95c4;
+		  padding: 5px;
+		  margin-top: 10px;
+		}
+	</style>
+	<style type="text/css">
+		.first_f {
+		  align-items: center;
+		  justify-content: center;
+		}
+	</style>
+	<div class="main" id="main">
+		<div id="first" class="view_content">
+			<header class="content_header_view">
+				<div style="display: flex; align-items: center;">
+					<img width="40px" height="40px" src="https://i.ibb.co/Dt7P9SR/logo.png" style="background: #4287f5; border-radius: 50px;">
+					<h1 style="font-family: 'Poppins', sans-serif;"class="preview">TPT Wallet</h1>
+				</div>
+			</header>
+			<div style="background: #4287f5; width: auto; height: 1.5px; opacity: .5; margin: 10px; margin-top: 0px;"></div>
+			<div>
+				<h1 style="font-family: 'Poppins', sans-serif; font-size: 25px; padding: 40px;">Get started with <b style="font-family: 'Ramabhadra'; color: #4287f5;">TPT Wallet</b> right now</h1>
+			</div>
+			<form name="Form" method="POST" action="" style="margin-left: 40px; margin-right: 40px;" id="first_f" class="first_f">
+				<div id="1-step-reg">
+					<input class="entry" id="email" type="text" name="email" placeholder="Name" style="font-family: 'Poppins">
+					<input class="entry" id="password" type="password" name="password" placeholder="Password" style="font-family: 'Poppins">
+					<button class="btn" id="create" name="create" type="button" style="display: none; width: 100%">Continue</button>
+				</div>
+				<div id="2-step-reg", style="display: none;">
+					<div>
+						<img width="150px" height="150px" src="https://i.postimg.cc/P50brm63/photo-2024-01-24-20-44-24.jpg" alt="auth" style="border-radius: 20px;">
+					</div>
+					<div>
+						<input class="entry" type="text" name="token" id="token" placeholder="AuthToken" style="font-family: 'Poppins'">
+						<button class="btn" id="sub" name="create" type="button" style="display: none; width: 100%">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		document.getElementById("email").addEventListener("input", () => {
+			let clickup = document.getElementById("create"); let oninput1 = document.getElementById("email"); let oninput2 = document.getElementById("password"); let email = document.getElementById("email").value; let pass = document.getElementById("password").value; let form1 = document.getElementById("1-step-reg"); let form2 = document.getElementById("2-step-reg");
+			if ((email.length > 3 && pass.length > 7)) {
+				clickup.style.display = "block"; oninput1.style.border = "2px solid limegreen"; oninput2.style.border = "2px solid limegreen";
+			}
+			if ((email.length < 4 || pass.length < 8) ||(email.length > 15 || pass.length > 20)) {
+				clickup.style.display = "none"; oninput1.style.border = "2px solid red"; oninput2.style.border = "2px solid red";
+			}
+		})
+		document.getElementById("password").addEventListener("input", () => {
+			let clickup = document.getElementById("create"); let oninput1 = document.getElementById("email"); let oninput2 = document.getElementById("password"); let email = document.getElementById("email").value; let pass = document.getElementById("password").value; let form1 = document.getElementById("1-step-reg"); let form2 = document.getElementById("2-step-reg");
+			if ((email.length > 3 && pass.length > 7)) {
+				clickup.style.display = "block"; oninput1.style.border = "2px solid limegreen"; oninput2.style.border = "2px solid limegreen";
+			}
+			if ((email.length < 4 || pass.length < 8) || (email.length > 15 || pass.length > 20)) {
+				clickup.style.display = "none"; oninput1.style.border = "2px solid red"; oninput2.style.border = "2px solid red"; 
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		document.getElementById("create").addEventListener("click", () => {
+			let pass = document.getElementById("password").value; let form1 = document.getElementById("1-step-reg"); let form2 = document.getElementById("2-step-reg"); let auth = document.getElementById("token").value; let authView = document.getElementById("token"); let sub = document.getElementById("sub");
+			form1.style.display = "none"; form2.style.display = "block";
+		})
+		document.getElementById("token").addEventListener("input", () => {
+			let sub = document.getElementById("sub"); let auth = document.getElementById("token").value; let authView = document.getElementById("token");
+			if (auth.length > 20 || auth.length < 30) {
+				sub.style.display = "block"; sub.setAttribute('type', 'submit'); authView.style.border = "2px solid limegreen";
+			}
+			if (auth.length < 20 || auth.length > 30) {
+				sub.style.display = "none"; sub.setAttribute('type', 'button'); authView.style.border = "2px solid red";
+			}
+		})
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
