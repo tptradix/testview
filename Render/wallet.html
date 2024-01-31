@@ -31,7 +31,7 @@
 	<style> * { margin: 0; padding: 0; }</style>
 	<style> .fit-f { color: #2e2e2e; font-size: 14px; font-family: 'Ubuntu'; text-align: center; }</style>
 	<style>	body { width: 100%; height: auto; background-color: #FFFFFF; }</style>
-	<style> .view-state-n { margin-bottom: 10px; margin-right: 0px; margin-left: 0px; margin-top: 0px; border-radius: 0px; background-color: #FFFFFF; padding-bottom: 5px; padding-top: 10px; width: 100%; border-radius: 0px; }</style>
+	<style> .view-state-n { margin-bottom: 10px; margin-right: 0px; margin-left: 0px; margin-top: 0px; border-radius: 0px; background-color: #FFFFFF; padding-bottom: 5px; padding-top: 10px; width: 100%; border-radius: 0px; box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1); }</style>
 	<style> .view-ball-id1 { color: #000000; font-size: 14px; font-family: 'Poppins'; }</style>
 	<style> .view-ls { display: flex; justify-content: space-between; align-items: center; }</style>
 	<style> .currency-view { font-size: 38px; font-family: 'Poppins'; color: #000000; }</style>
@@ -44,10 +44,11 @@
 	<style> .crypto-f { color: #000000; font-size: 15px; font-family: 'Poppins'; padding: 5px; }</style>
 	<style> .separate { background: #4287f5; width: auto; height: 0.0px; opacity: .5; margin: 5px }</style>
 	<style> .bm { position: fixed; bottom: 0; background-color: #f7f9fb; width: 100%; display: flex;}</style>
-	<style> .bacl { background: #FFFFFF; border-top-left-radius: 0px; border-top-right-radius: 0px; padding-top: 10px; }</style>
+	<style> .bacl { background: #FFFFFF; border-top-left-radius: 0px; border-top-right-radius: 0px; padding-top: 10px; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1) }</style>
 	<style> .change-ecx { display: flex; justify-content: space-between; align-items: center; text-align: center; background-color: #F1F5FA; margin: 20px; padding: 1.5px; border-radius: 10px; }</style>
-	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100px; }</style>
-	<style> .ui-btn-o { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100px;}</style>
+	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: auto; }</style>
+	<style> .ui-btn-o { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: auto;}</style>
+	<style> .ui-btn-n { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: auto;}</style>
 	<style> .other-view { background: #FFFFFF; margin-top: 10px; padding: 10px; display: none; }</style>
 	<style> .other-btn { background: #FFFFFF; padding: 5px; font-size: 14px; font-family: 'Poppins'; border-radius: 10px; width: 100%; border: 0;}</style>
 	<style> .ui-img-other { border: 2px solid #3390ec; border-radius: 30px; margin-left: 10px; margin-right: 10px; }</style>
@@ -67,7 +68,7 @@
 				</div>
 				<div style="display: grid; justify-content: center; align-items: center;">
 					<div style="align-items: center; justify-content: center;">
-						<h2 class="fit-f">Ballance</h2>
+						<h2 class="fit-f">Balance</h2>
 					</div>
 					<div style="display: flex; justify-content: center; align-items: center;">
 						<h1 class="currency-view">125</h1>
@@ -102,6 +103,9 @@
 					</div>
 					<div style="align-items: center;">
 						<button class="ui-btn-o">Activity</button>
+					</div>
+					<div style="align-items: center;">
+						<button class="ui-btn-n">Explore</button>
 					</div>
 				</div>
 				<div class="all-currency">
@@ -188,7 +192,6 @@
 	<script src="./js/main.js"></script>
 </body>
 </html>
-
 
 
 
