@@ -40,7 +40,7 @@
 	<style> .btn { border: 1.6px solid #000000; background-color: transparent; color: #000000; font-family: 'Poppins'; font-size: 12px; padding: 3px; border-radius: 25px;}</style>
 	<style> .ui-img { background: transparent; border-radius: 30px; margin-left: 0px; margin-right: 0px; border: 2px solid #3390ec; margin: 5px; margin-bottom: 3px;}</style>
 	<style> .nav-view { display: flex; justify-content: center; color: #707579; padding-top: 10px;}</style>
-	<style> .all-currency { background: #FFFFFF; justify-content: center; padding: 10px; margin: 10px; margin-top: 5px; overflow: auto; height: 290px; }</style>
+	<style> .all-currency { background: #FFFFFF; justify-content: center; padding: 10px; margin: 10px; margin-top: 5px; overflow: auto; height: 415px; }</style>
 	<style> .crypto-f { color: #000000; font-size: 15px; font-family: 'Poppins'; padding: 5px; }</style>
 	<style> .separate { background: #F1F5FA; width: auto; height: 4px; opacity: .5; margin: 5px }</style>
 	<style> .bm { position: fixed; bottom: 0; background-color: #f7f9fb; width: 100%; display: flex;}</style>
@@ -112,42 +112,57 @@
 					<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #FFFFFF; border-radius: 15px">
 						<div style="display: flex; align-items: center;">
 							<img width="40px" height="40px" src="https://cryptologos.cc/logos/toncoin-ton-logo.png">
-							<h2 class="crypto-f">Toncoin</h2>
+							<div style="margin-left: 5px;">
+								<h2 class="crypto-f">Toncoin</h2>
+								<h2 class="addr-view">TON</h2>
+							</div>
 						</div>
-						<p class="crypto-f">0 TON</p>
+						<p class="crypto-f">0</p>
 					</div>
 					<div class="separate"></div>
 					<div id="tether" style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #FFFFFF; border-radius: 15px">
 						<div style="display: flex; align-items: center;">
 							<img id="tether-copy" class="open-btn" width="40px" height="40px" src="https://cdn.worldvectorlogo.com/logos/tether.svg">
-							<h2 class="crypto-f">Tether</h2>
-							<input id="usdt-adr" value="TRXSRp3gsRsGzMpZKSiAT3nKHgwQv2UJmD" style="display: none;">
+							<div style="margin-left: 5px;">
+								<h2 class="crypto-f">Tether</h2>
+								<h2 class="addr-view">USDT</h2>
+								<input id="usdt-adr" value="TRXSRp3gsRsGzMpZKSiAT3nKHgwQv2UJmD" style="display: none;">
+							</div>
 						</div>
-						<p class="crypto-f">0 USDT</p>
+						<p class="crypto-f">0</p>
 					</div>
 					<div class="separate"></div>
 					<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #FFFFFF; border-radius: 15px">
 						<div style="display: flex; align-items: center;">
 							<img style="border-radius: 30px;" width="40px" height="40px" src="https://s3.coinmarketcap.com/static/img/portraits/62837c68ab0e763d5f77e9a6.png">
-							<h2 class="crypto-f">Tron</h2>
+							<div style="margin-left: 5px;">
+								<h2 class="crypto-f">Tron</h2>
+								<h2 class="addr-view">TRX</h2>
+							</div>
 						</div>
-						<p class="crypto-f">0 TRX</p>
+						<p class="crypto-f">0</p>
 					</div>
 					<div class="separate"></div>
 					<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #FFFFFF; border-radius: 15px">
 						<div style="display: flex; align-items: center;">
 							<img style="background: #4287f5; border-radius: 30px" width="40px" height="40px" src="https://i.ibb.co/Dt7P9SR/logo.png">
-							<h2 class="crypto-f">Tptradix</h2>
+							<div style="margin-left: 5px">
+								<h2 class="crypto-f">Tptradix</h2>
+								<h2 class="addr-view">TPT</h2>
+							</div>
 						</div>
-						<p class="crypto-f">0 TPT</p>
+						<p class="crypto-f">0</p>
 					</div>
 					<div class="separate"></div>
 					<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #FFFFFF; border-radius: 15px">
 						<div style="display: flex; align-items: center;">
 							<img width="40px" height="40px" src="https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png">
-							<h2 class="crypto-f">Solana</h2>
+							<div style="margin-left: 5px">
+								<h2 class="crypto-f">Solana</h2>
+								<h2 class="addr-view">SOL</h2>
+							</div>
 						</div>
-						<p class="crypto-f">0 SOL</p>
+						<p class="crypto-f">0</p>
 					</div>
 				</div>
 			</div>
@@ -188,32 +203,9 @@
 			</form>
 		</div>
 	</div>
-	<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container" style="height:100%;width:100%">
-  <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
-  <div class="tradingview-widget-copyright"><a href="https://ru.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Все рынки на TradingView</span></a></div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-  {
-  "autosize": true,
-  "symbol": "NASDAQ:AAPL",
-  "interval": "D",
-  "timezone": "exchange",
-  "theme": "light",
-  "style": "1",
-  "locale": "ru",
-  "enable_publishing": false,
-  "hide_top_toolbar": true,
-  "hide_legend": true,
-  "save_image": false,
-  "support_host": "https://www.tradingview.com"
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
 	<script src="./js/main.js"></script>
 </body>
 </html>
-
 
 
 
