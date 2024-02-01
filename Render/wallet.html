@@ -43,7 +43,7 @@
 	<style> .all-currency { background: #FFFFFF; justify-content: center; padding: 10px; margin: 10px; margin-top: 5px; overflow: auto; height: 415px; }</style>
 	<style> .crypto-f { color: #000000; font-size: 15px; font-family: 'Poppins'; padding: 5px; }</style>
 	<style> .separate { background: #F1F5FA; width: auto; height: 4px; opacity: .5; margin: 5px }</style>
-	<style> .bm { position: fixed; bottom: 0; background-color: #f7f9fb; width: 100%; display: flex;}</style>
+	<style> .bm { position: fixed; bottom: 0; background-color: #f7f9fb; width: 100%; justify-content: center; display: flex; padding: 2px; align-items: center;}</style>
 	<style> .bacl { background: #FFFFFF; border-top-left-radius: 0px; border-top-right-radius: 0px; padding-top: 10px; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1) }</style>
 	<style> .change-ecx { display: flex; justify-content: space-between; align-items: center; text-align: center; background-color: #F1F5FA; margin: 20px; margin-top: 5px; padding: 1.5px; border-radius: 10px; }</style>
 	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 16px; font-family: 'Ubuntu'; border-radius: 10px; width: auto; padding-right: 20px; padding-left: 20px; }</style>
@@ -129,7 +129,7 @@
 								<input id="usdt-adr" value="TRXSRp3gsRsGzMpZKSiAT3nKHgwQv2UJmD" style="display: none;">
 							</div>
 						</div>
-						<p class="crypto-f">0</p>
+						<p class="crypto-f">125.0</p>
 					</div>
 					<div class="separate"></div>
 					<div style="display: flex; align-items: center; justify-content: space-between; padding: 10px; background-color: #FFFFFF; border-radius: 15px">
@@ -192,21 +192,31 @@
 				</nav> 
 			</div>
 		</div>
-	<div class="modals">
-		<div class="modal">
-			<button class="modal__btn"></button>
-			<button class="mobile-close"></button>
-			<form class="modal__form form">
-				<input type="text" class="form__input" placeholder="Address">
-				<input type="tel" class="form__input" placeholder="amount">
-				<button class="form__btn">Send</button>
-			</form>
+		<div class="bm">
+			<div style="display: grid; padding: 1px;">
+				<div style="display: flex; justify-content: center; align-items: center;">
+					<img style="align-content: center;" width="35px" height="35px" src="https://i.postimg.cc/xddXX6Th/wallet.png">
+				</div>
+				<div>
+					<h4 class="fit-f">Wallet</h4>
+				</div>
+			</div>
+		</div>
+		<div class="modals">
+			<div class="modal">
+				<button class="modal__btn"></button>
+				<button class="mobile-close"></button>
+				<form class="modal__form form">
+					<input type="text" class="form__input" placeholder="Address">
+					<input type="tel" class="form__input" placeholder="amount">
+					<button class="form__btn">Send</button>
+				</form>
+			</div>
 		</div>
 	</div>
 	<script src="./js/main.js"></script>
 </body>
 </html>
-
 
 
 
