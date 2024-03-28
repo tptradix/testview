@@ -45,7 +45,7 @@
 	<style> .bm { position: fixed; bottom: 0; background-color: #f7f9fb; width: 100%; justify-content: center; display: flex; padding: 2px; align-items: center;}</style>
 	<style> .bacl { background: #FFFFFF; border-top-left-radius: 0px; border-top-right-radius: 0px; padding-top: 10px; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1) }</style>
 	<style> .change-ecx { display: flex; justify-content: space-between; align-items: center; text-align: center; background-color: #F1F5FA; margin: 20px; margin-top: 5px; padding: 1.5px; border-radius: 10px; }</style>
-	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 16px; font-family: 'Ubuntu'; border-radius: 10px; width: auto; padding-right: 20px; padding-left: 20px; }</style>
+	<style> .ui-btn { border: 0; grid-column: 1; background: #FFFFFF; padding: 5px; font-size: 16px; font-family: 'Ubuntu'; border-radius: 10px; width: 100%; padding-right: 20px; padding-left: 20px; }</style>
 	<style> .ui-btn-o { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 16px; font-family: 'Ubuntu'; border-radius: 10px; width: auto; color: #525252; padding-right: 20px; padding-left: 20px; }</style>
 	<style> .ui-btn-n { border: 0; grid-column: 2; background: #f7f9fb; padding: 5px; font-size: 16px; font-family: 'Ubuntu'; border-radius: 10px; width: auto; color: #525252; padding-right: 20px; padding-left: 20px;}</style>
 	<style> .other-view { background: #FFFFFF; margin-top: 10px; padding: 10px; display: none; }</style>
@@ -243,26 +243,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="modals">
-			<div class="modal">
-				<button class="modal__btn"></button>
-				<button class="mobile-close"></button>
-				<div class="modal__form form">
-					<div style="display: grid;justify-content: center; align-items: center;">
-						<canvas id="qr" height="190" width="190"></canvas>
-					</div>
-					<div style="display: grid; justify-content: center;">
-						<p style="font-family: 'Ubuntu'; color: #1dc47c">USDT TRC-20</p>
-					</div>
-					<h2 id="usdt_adr_v" style="width: auto; font-family: 'Ubuntu'; font-size: 12.5px">{{data.data.USDT[:34]}}</h2>
-					<button class="form__btn">Copy Address</button>
-				</div>
-			</div>
-		</div>
-	</div>
 	<script src="/js/main.js"></script>
 	<script src="/js/plugin.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/qrious"></script>
-
-
-
+	</div>
+</body>
+</html>
