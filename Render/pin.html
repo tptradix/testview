@@ -70,9 +70,7 @@
         let tg = window.Telegram.WebApp;
         tg.MainButton.setText("Continue");
         tg.MainButton.show();
-        tg.MainButton.setParams(
-            is_active = false
-        )
+        tg.MainButton.isActive = false
     </script>
     <script>
         document.body.onselectstart = function() { return false; }
