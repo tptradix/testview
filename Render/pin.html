@@ -68,8 +68,9 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
        let tg = window.Telegram.WebApp;
-       tg.MainButton.setText("Continue")
+       tg.MainButton.setText("Continue");
        tg.MainButton.show();
+       tg.MainButton.setActive(false);
     </script>
     <script>
         document.body.onselectstart = function() { return false; }
