@@ -107,6 +107,15 @@
                             tg.MainButton.show();
                             tg.MainButton.isActive = true;
                         }
+                        else if (document.getElementById('qst').value != document.getElementById('put').value) {
+                            document.getElementById('qst').value = document.getElementById('put').value
+                            document.getElementById('put').value = ''
+                            document.getElementById('pin_4').style.background = '#737373'
+                            document.getElementById('pin_3').style.background = '#737373'
+                            document.getElementById('pin_2').style.background = '#737373'
+                            document.getElementById('pin_1').style.background = '#737373'
+                            document.querySelector('.inf').innerText = 'Repeat the pin code'
+                        }
                         else {
                             if (document.getElementById('qst').value.length == 0) {
                                 console.log('No')
