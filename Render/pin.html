@@ -102,20 +102,25 @@
                         document.getElementById('pin_3').style.background = '#3390ec'
                         document.getElementById('pin_4').style.background = '#3390ec'
                         if (document.getElementById('qst').value == document.getElementById('put').value) {
-                            console.log('Yes')
+                            tg.MainButton.setText("OK");
+                            tg.MainButton.show();
                         }
                         else {
                             console.log('No')
+                            let tg = window.Telegram.WebApp;
+                            tg.MainButton.setText("Continue");
+                            tg.MainButton.show();
+                            tg.MainButton.color = "#2481cc";
+                            Telegram.WebApp.onEvent("mainButtonClicked", function() {
+                                document.getElementById('qst').value = document.getElementById('put').value
+                                document.getElementById('put').value = ''
+                                document.getElementById('pin_4').style.background = '#737373'
+                                document.getElementById('pin_3').style.background = '#737373'
+                                document.getElementById('pin_2').style.background = '#737373'
+                                document.getElementById('pin_1').style.background = '#737373'
+                                tg.MainButton.hide();
+                            });
                         }
-                        let tg = window.Telegram.WebApp;
-                        tg.MainButton.setText("Continue");
-                        tg.MainButton.show();
-                        tg.MainButton.color = "#2481cc";
-                        Telegram.WebApp.onEvent("mainButtonClicked", function() {
-                            document.getElementById('qst').value = document.getElementById('put').value
-                            document.getElementById('put').value = ''
-                            tg.MainButton.hide();
-                        });
                     }
                 }
             })
