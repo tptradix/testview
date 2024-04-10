@@ -129,7 +129,7 @@
                                     document.getElementById('del').style.display = 'none'
                                 });
                             }
-                            else {
+                            else if (document.getElementById('qst').value != document.getElementById('put').value) {
                                 document.getElementById('qst').value = document.getElementById('put').value;
                                 document.getElementById('put').value = ''
                                 document.getElementById('pin_4').style.background = '#737373'
