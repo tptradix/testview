@@ -74,87 +74,99 @@
         tg.MainButton.color = '#737373'
     </script>
     <script>
-            document.body.onselectstart = function() { return false; }
-            document.body.onmousedown = function() { return false; }
-
-            let click = document.querySelectorAll('.type_btn');
-            let putValue = document.getElementById('put');
-            let qstValue = document.getElementById('qst');
-
-            click.forEach(btn => {
-                let btnElement = document.getElementById(btn.id);
-
-                btnElement.addEventListener('click', () => {
-                    let pin = btn.textContent.trim();
-                    
-                    if (putValue.value.length < 4 ) {
-                        putValue.value += pin;
-                        console.log(putValue.value);
-
-                        if (putValue.value.length <= 4) {
-                            for (let i = 1; i <= putValue.value.length; i++) {
-                                document.getElementById(`pin_${i}`).style.background = '#3390ec';
-                            }
-
-                            if (qstValue.value === putValue.value) {
-                                let tg = window.Telegram.WebApp;
-                                tg.MainButton.setText("OK");
-                                tg.MainButton.show();
-                            } else if (qstValue.value.length === 0) {
+        document.body.onselectstart = function() { return false; }
+        document.body.onmousedown = function() { return false; }
+        let click = document.querySelectorAll('.type_btn')
+        click.forEach(click => {
+            let btn = document.getElementById(click.id);
+            btn.addEventListener('click', () => {
+                let pin = ((btn.textContent).toString().replace("\/s+/g", ''))
+                if (document.getElementById('put').value.length < 4 ) {
+                    document.getElementById('put').value = document.getElementById('put').value + pin.trim();
+                    console.log(document.getElementById('put').value)
+                    if ((document.getElementById('put').value).length == 1 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                    }
+                    if ((document.getElementById('put').value).length == 2 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                        document.getElementById('pin_2').style.background = '#3390ec'
+                    }
+                    if ((document.getElementById('put').value).length == 3 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                        document.getElementById('pin_2').style.background = '#3390ec'
+                        document.getElementById('pin_3').style.background = '#3390ec'
+                    }
+                    if ((document.getElementById('put').value).length == 4 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                        document.getElementById('pin_2').style.background = '#3390ec'
+                        document.getElementById('pin_3').style.background = '#3390ec'
+                        document.getElementById('pin_4').style.background = '#3390ec'
+                        if (document.getElementById('qst').value == document.getElementById('put').value) {
+                            tg.MainButton.setText("OK");
+                            tg.MainButton.show();
+                        }
+                        else {
+                            if (document.getElementById('qst').value.length == 0) {
+                                console.log('No')
                                 let tg = window.Telegram.WebApp;
                                 tg.MainButton.setText("Continue");
                                 tg.MainButton.show();
                                 tg.MainButton.color = "#2481cc";
-
                                 Telegram.WebApp.onEvent("mainButtonClicked", function() {
-                                    qstValue.value = putValue.value;
-                                    putValue.value = '';
-                                    document.querySelectorAll('.pin').forEach(pin => {
-                                        pin.style.background = '#737373';
-                                    });
-                                    document.querySelector('.inf').value = 'Repeat the pin code';
+                                    document.getElementById('qst').value = document.getElementById('put').value
+                                    document.getElementById('put').value = ''
+                                    document.getElementById('pin_4').style.background = '#737373'
+                                    document.getElementById('pin_3').style.background = '#737373'
+                                    document.getElementById('pin_2').style.background = '#737373'
+                                    document.getElementById('pin_1').style.background = '#737373'
+                                    document.querySelector('.inf').value = 'Repeat the pin code'
                                     tg.MainButton.hide();
                                 });
                             }
                         }
                     }
-                });
-            });
-
-            document.getElementById('del').addEventListener('click', () => {
-                let tg = window.Telegram.WebApp;
-
-                if (qstValue.value.length === 0) {
-                    tg.MainButton.setText("Continue");
-                    tg.MainButton.show();
-                    tg.MainButton.color = '#737373';
-
-                    if (putValue.value.length > 0) {
-                        putValue.value = putValue.value.slice(0, -1);
-                        console.log(document.getElementById('put').value)
                 }
-                if ((document.getElementById('put').value).length == 4 ) {
+            })
+        })
+        document.getElementById('del').addEventListener('click', () => {
+            if (document.getElementById('qst').value.length == 0) {
+                let tg = window.Telegram.WebApp;
+                tg.MainButton.setText("Continue");
+                tg.MainButton.show();
+                tg.MainButton.color = '#737373'
+                function back() {
+                    if (document.getElementById('put').value.length > 0) {
+                        document.getElementById('put').value = document.getElementById('put').value.slice(0, -1)
+                        console.log(document.getElementById('put').value)
+                    }
+                    if ((document.getElementById('put').value).length == 4 ) {
+                            document.getElementById('pin_4').style.background = '#737373'
+                        }
+                    if ((document.getElementById('put').value).length == 3 ) {
+                        document.getElementById('pin_4').style.background = '#737373'
+                        
+                    }
+                    if ((document.getElementById('put').value).length == 2 ) {
+                        document.getElementById('pin_3').style.background = '#737373'
+                    }
+                    if ((document.getElementById('put').value).length == 1 ) {
+                        document.getElementById('pin_4').style.background = '#737373'
+                        document.getElementById('pin_3').style.background = '#737373'
+                        document.getElementById('pin_2').style.background = '#737373'
                         document.getElementById('pin_4').style.background = '#737373'
                     }
-                if ((document.getElementById('put').value).length == 3 ) {
-                    document.getElementById('pin_4').style.background = '#737373'
-                    
+                    if ((document.getElementById('put').value).length == 0 ) {
+                        document.getElementById('pin_4').style.background = '#737373'
+                        document.getElementById('pin_3').style.background = '#737373'
+                        document.getElementById('pin_2').style.background = '#737373'
+                        document.getElementById('pin_1').style.background = '#737373'
+                    }
                 }
-                if ((document.getElementById('put').value).length == 2 ) {
-                    document.getElementById('pin_3').style.background = '#737373'
-                }
-                if ((document.getElementById('put').value).length == 1 ) {
-                    document.getElementById('pin_4').style.background = '#737373'
-                    document.getElementById('pin_3').style.background = '#737373'
-                    document.getElementById('pin_2').style.background = '#737373'
-                    document.getElementById('pin_4').style.background = '#737373'
-                }
-                if ((document.getElementById('put').value).length == 0 ) {
-                    document.getElementById('pin_4').style.background = '#737373'
-                    document.getElementById('pin_3').style.background = '#737373'
-                    document.getElementById('pin_2').style.background = '#737373'
-                    document.getElementById('pin_1').style.background = '#737373'
-                }
+            }
+            if (document.getElementById('qst').value.length != 0) {
+                let tg = window.Telegram.WebApp;
+                tg.MainButton.hide();
+                back();
             }
         })
     </script>
