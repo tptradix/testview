@@ -64,6 +64,7 @@
             </div>
         </form>
         <input id="put" name="put" style="display: none;" value="">
+        <input id="qst" name="qst" value="">
     </div>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -100,13 +101,23 @@
                         document.getElementById('pin_2').style.background = '#3390ec'
                         document.getElementById('pin_3').style.background = '#3390ec'
                         document.getElementById('pin_4').style.background = '#3390ec'
+                        if (document.getElementById('qst').value == document.getElementById('put').value) {
+                            console.log('Yes')
+                        }
+                        else {
+                            console.log('No')
+                        }
                         let tg = window.Telegram.WebApp;
                         tg.MainButton.setText("Continue");
                         tg.MainButton.show();
                         tg.MainButton.color = "#2481cc";
+                        Telegram.WebApp.onEvent("mainButtonClicked", function() {
+                            document.getElementById('qst').value = document.getElementById('put').value
+                            document.getElementById('put').value = ''
+                            tg.MainButton.hide();
+                        });
                     }
                 }
-
             })
         })
         document.getElementById('del').addEventListener('click', () => {
