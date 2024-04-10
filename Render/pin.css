@@ -36,7 +36,6 @@ h1 {
 }
 
 .type_btn {
-    cursor: pointer;
     border-radius: 4vw;
     padding-top: 4vw;
     padding-bottom: 4vw;
@@ -46,7 +45,6 @@ h1 {
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    outline: none;
 }
 
 .type_btn:focus {
