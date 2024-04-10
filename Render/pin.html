@@ -103,7 +103,9 @@
                         document.getElementById('pin_3').style.background = '#3390ec'
                         document.getElementById('pin_4').style.background = '#3390ec'
                         if (document.getElementById('qst').value == document.getElementById('put').value) {
-                            
+                            tg.MainButton.setText("Submit");
+                            tg.MainButton.show();
+                            tg.MainButton.isActive = true;
                         }
                         else {
                             if (document.getElementById('qst').value.length == 0) {
