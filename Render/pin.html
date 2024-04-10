@@ -106,21 +106,23 @@
                             tg.MainButton.show();
                         }
                         else {
-                            console.log('No')
-                            let tg = window.Telegram.WebApp;
-                            tg.MainButton.setText("Continue");
-                            tg.MainButton.show();
-                            tg.MainButton.color = "#2481cc";
-                            Telegram.WebApp.onEvent("mainButtonClicked", function() {
-                                document.getElementById('qst').value = document.getElementById('put').value
-                                document.getElementById('put').value = ''
-                                document.getElementById('pin_4').style.background = '#737373'
-                                document.getElementById('pin_3').style.background = '#737373'
-                                document.getElementById('pin_2').style.background = '#737373'
-                                document.getElementById('pin_1').style.background = '#737373'
-                                document.querySelector('.inf').innerText = 'Repeat the pin code'
-                                tg.MainButton.hide();
-                            });
+                            if (document.getElementById('qst').value.length < 1) {
+                                console.log('No')
+                                let tg = window.Telegram.WebApp;
+                                tg.MainButton.setText("Continue");
+                                tg.MainButton.show();
+                                tg.MainButton.color = "#2481cc";
+                                Telegram.WebApp.onEvent("mainButtonClicked", function() {
+                                    document.getElementById('qst').value = document.getElementById('put').value
+                                    document.getElementById('put').value = ''
+                                    document.getElementById('pin_4').style.background = '#737373'
+                                    document.getElementById('pin_3').style.background = '#737373'
+                                    document.getElementById('pin_2').style.background = '#737373'
+                                    document.getElementById('pin_1').style.background = '#737373'
+                                    document.querySelector('.inf').value = 'Repeat the pin code'
+                                    tg.MainButton.hide();
+                                });
+                            }
                         }
                     }
                 }
