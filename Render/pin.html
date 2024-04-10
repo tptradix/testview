@@ -80,30 +80,39 @@
             let btn = document.getElementById(click.id);
             btn.addEventListener('click', () => {
                 let pin = ((btn.textContent).toString().replace("\/s+/g", ''))
-                document.getElementById('put').value = document.getElementById('put').value + pin.trim();
-                console.log(document.getElementById('put').value)
-                if ((document.getElementById('put').value).length == 1 ) {
-                    document.getElementById('pin_1').style.background = '#3390ec'
-                }
-                if ((document.getElementById('put').value).length == 2 ) {
-                    document.getElementById('pin_1').style.background = '#3390ec'
-                    document.getElementById('pin_2').style.background = '#3390ec'
-                }
-                if ((document.getElementById('put').value).length == 3 ) {
-                    document.getElementById('pin_1').style.background = '#3390ec'
-                    document.getElementById('pin_2').style.background = '#3390ec'
-                    document.getElementById('pin_3').style.background = '#3390ec'
-                }
-                if ((document.getElementById('put').value).length == 4 ) {
-                    document.getElementById('pin_1').style.background = '#3390ec'
-                    document.getElementById('pin_2').style.background = '#3390ec'
-                    document.getElementById('pin_3').style.background = '#3390ec'
-                    document.getElementById('pin_4').style.background = '#3390ec'
+                if (document.getElementById('put').value.length < 4 ) {
+                    document.getElementById('put').value = document.getElementById('put').value + pin.trim();
+                    console.log(document.getElementById('put').value)
+                    if ((document.getElementById('put').value).length == 1 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                    }
+                    if ((document.getElementById('put').value).length == 2 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                        document.getElementById('pin_2').style.background = '#3390ec'
+                    }
+                    if ((document.getElementById('put').value).length == 3 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                        document.getElementById('pin_2').style.background = '#3390ec'
+                        document.getElementById('pin_3').style.background = '#3390ec'
+                    }
+                    if ((document.getElementById('put').value).length == 4 ) {
+                        document.getElementById('pin_1').style.background = '#3390ec'
+                        document.getElementById('pin_2').style.background = '#3390ec'
+                        document.getElementById('pin_3').style.background = '#3390ec'
+                        document.getElementById('pin_4').style.background = '#3390ec'
+                        let tg = window.Telegram.WebApp;
+                        tg.MainButton.setText("Continue");
+                        tg.MainButton.show();
+                    }
                 }
 
             })
         })
         document.getElementById('del').addEventListener('click', () => {
+            let tg = window.Telegram.WebApp;
+            tg.MainButton.setText("Continue");
+            tg.MainButton.show();
+            tg.MainButton.color = '#737373'
             if (document.getElementById('put').value.length > 0) {
                 document.getElementById('put').value = document.getElementById('put').value.slice(0, -1)
                 console.log(document.getElementById('put').value)
@@ -111,25 +120,25 @@
             if ((document.getElementById('put').value).length == 4 ) {
                     document.getElementById('pin_4').style.background = '#737373'
                 }
-                if ((document.getElementById('put').value).length == 3 ) {
-                    document.getElementById('pin_4').style.background = '#737373'
-                    
-                }
-                if ((document.getElementById('put').value).length == 2 ) {
-                    document.getElementById('pin_3').style.background = '#737373'
-                }
-                if ((document.getElementById('put').value).length == 1 ) {
-                    document.getElementById('pin_4').style.background = '#737373'
-                    document.getElementById('pin_3').style.background = '#737373'
-                    document.getElementById('pin_2').style.background = '#737373'
-                    document.getElementById('pin_4').style.background = '#737373'
-                }
-                if ((document.getElementById('put').value).length == 0 ) {
-                    document.getElementById('pin_4').style.background = '#737373'
-                    document.getElementById('pin_3').style.background = '#737373'
-                    document.getElementById('pin_2').style.background = '#737373'
-                    document.getElementById('pin_1').style.background = '#737373'
-                }
+            if ((document.getElementById('put').value).length == 3 ) {
+                document.getElementById('pin_4').style.background = '#737373'
+                
+            }
+            if ((document.getElementById('put').value).length == 2 ) {
+                document.getElementById('pin_3').style.background = '#737373'
+            }
+            if ((document.getElementById('put').value).length == 1 ) {
+                document.getElementById('pin_4').style.background = '#737373'
+                document.getElementById('pin_3').style.background = '#737373'
+                document.getElementById('pin_2').style.background = '#737373'
+                document.getElementById('pin_4').style.background = '#737373'
+            }
+            if ((document.getElementById('put').value).length == 0 ) {
+                document.getElementById('pin_4').style.background = '#737373'
+                document.getElementById('pin_3').style.background = '#737373'
+                document.getElementById('pin_2').style.background = '#737373'
+                document.getElementById('pin_1').style.background = '#737373'
+            }
         })
     </script>
 </body>
